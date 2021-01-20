@@ -5,6 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,8 +13,10 @@ class MainActivity : AppCompatActivity() {
     private var runnable = object : Runnable {
         override fun run() {
             if (progressView.progress < 100) {
-                progressView.setProgress(newProgress = progressView.progress + 10)
-                handler.postDelayed(this, 1000)
+                progressView.setProgress(
+                    newProgress = progressView.progress + Random.nextInt(3, 20)
+                )
+                handler.postDelayed(this, 2000)
             }
         }
     }
