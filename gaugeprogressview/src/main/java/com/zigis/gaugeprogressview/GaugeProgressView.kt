@@ -247,10 +247,6 @@ open class GaugeProgressView : View {
 
     //  Helper methods
 
-    private fun isRTL(): Boolean {
-        return resources.configuration.layoutDirection == LAYOUT_DIRECTION_RTL
-    }
-
     private fun dp(dp: Float): Float {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
     }
@@ -258,7 +254,7 @@ open class GaugeProgressView : View {
     //  Public setters
 
     fun setProgress(newProgress: Int) {
-        val targetProgress = min(newProgress, 100)
+        val targetProgress = max(0, min(newProgress, 100))
         val duration = (abs(progress - newProgress).toFloat() / 10) * 200
 
         value = targetProgress.toString()
