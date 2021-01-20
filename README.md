@@ -3,7 +3,7 @@
 Unique progress view with rich customisation options! You can hide value if you want too.
 ##### Minimum target SDK: 17. RTL SUPPORTED.
 
-![alt text](https://github.com/edgar-zigis/GaugeProgressView/blob/master/sample.gif?raw=true)
+![alt text](https://github.com/edgar-zigis/GaugeProgressView/blob/main/sample.gif?raw=true)
 
 ### Gradle
 Make sure you have jitpack.io included in your gradle repositories.
