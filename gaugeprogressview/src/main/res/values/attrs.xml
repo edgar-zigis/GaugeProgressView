@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GaugeProgressView">
+        <attr name="gpv_outerArcThickness" format="dimension" />
+        <attr name="gpv_innerArcThickness" format="dimension" />
+        <attr name="gpv_offsetBetweenArcs" format="dimension" />
+        <attr name="gpv_startAngle" format="float" />
+        <attr name="gpv_progress" format="integer" />
+        <attr name="gpv_outerArcColor" format="color" />
+        <attr name="gpv_innerArcColor" format="color" />
+        <attr name="gpv_valueFont" format="reference" />
+        <attr name="gpv_valueTextSize" format="dimension" />
+        <attr name="gpv_valueTextColor" format="color" />
+        <attr name="gpv_isValueHidden" format="boolean" />
+    </declare-styleable>
+</resources>
