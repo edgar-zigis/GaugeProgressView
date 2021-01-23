@@ -11,6 +11,8 @@
         android:layout_width="220dp"
         android:layout_height="220dp"
         app:gpv_innerArcColor="@color/gray"
+        app:gpv_innerArcDashDistance="8dp"
+        app:gpv_innerArcDashThickness="2dp"
         app:gpv_innerArcThickness="10dp"
         app:gpv_isValueHidden="false"
         app:gpv_offsetBetweenArcs="15dp"

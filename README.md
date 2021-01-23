@@ -12,7 +12,7 @@ Make sure you have jitpack.io included in your gradle repositories.
 maven { url "https://jitpack.io" }
 ```
 ```
-implementation 'com.github.edgar-zigis:gaugeprogressview:1.0.0'
+implementation 'com.github.edgar-zigis:gaugeprogressview:1.1.0'
 ```
 ### Usage
 ``` xml
@@ -21,6 +21,8 @@ implementation 'com.github.edgar-zigis:gaugeprogressview:1.0.0'
     android:layout_width="220dp"
     android:layout_height="220dp"
     app:gpv_innerArcColor="@color/gray"
+    app:gpv_innerArcDashDistance="8dp"
+    app:gpv_innerArcDashThickness="2dp"
     app:gpv_innerArcThickness="10dp"
     app:gpv_isValueHidden="false"
     app:gpv_offsetBetweenArcs="15dp"
