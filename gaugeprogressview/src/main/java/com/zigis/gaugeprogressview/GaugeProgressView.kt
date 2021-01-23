@@ -28,6 +28,17 @@ open class GaugeProgressView : View {
     var outerArcColor = Color.parseColor("#FF2400")
     var innerArcColor = Color.parseColor("#AFB6BB")
 
+    var innerArcDashThickness = dp(2f)
+        set(value) {
+            innerArcPathDashEffect = DashPathEffect(floatArrayOf(value, innerArcDashDistance), 0f)
+            field = value
+        }
+    var innerArcDashDistance = dp(8f)
+        set(value) {
+            innerArcPathDashEffect = DashPathEffect(floatArrayOf(innerArcDashThickness, value), 0f)
+            field = value
+        }
+
     var valueTypefaceSize = dp(50f)
     var valueTextColor = Color.parseColor("#1A1A1A")
     var valueTypeface = Typeface.create("sans-serif", Typeface.BOLD)
@@ -36,8 +47,11 @@ open class GaugeProgressView : View {
     private val outerArcPath = Paint(Paint.ANTI_ALIAS_FLAG)
     private val innerArcPath = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.style = Paint.Style.STROKE
-        it.pathEffect = DashPathEffect(floatArrayOf(dp(2f), dp(8f)), 0f)
     }
+    private var innerArcPathDashEffect = DashPathEffect(
+        floatArrayOf(innerArcDashThickness, innerArcDashDistance),
+        0f
+    )
 
     private var value = ""
     private val valueRect = Rect()
@@ -71,6 +85,8 @@ open class GaugeProgressView : View {
 
         outerArcThickness = styledAttributes.getDimension(R.styleable.GaugeProgressView_gpv_outerArcThickness, outerArcThickness)
         innerArcThickness = styledAttributes.getDimension(R.styleable.GaugeProgressView_gpv_innerArcThickness, innerArcThickness)
+        innerArcDashThickness = styledAttributes.getDimension(R.styleable.GaugeProgressView_gpv_innerArcDashThickness, innerArcDashThickness)
+        innerArcDashDistance = styledAttributes.getDimension(R.styleable.GaugeProgressView_gpv_innerArcDashDistance, innerArcDashDistance)
         offsetBetweenArcs = styledAttributes.getDimension(R.styleable.GaugeProgressView_gpv_offsetBetweenArcs, offsetBetweenArcs)
         startAngle = styledAttributes.getFloat(R.styleable.GaugeProgressView_gpv_startAngle, startAngle)
         progress = styledAttributes.getInteger(R.styleable.GaugeProgressView_gpv_progress, progress)
@@ -114,6 +130,7 @@ open class GaugeProgressView : View {
             paint = innerArcPath.also {
                 it.color = innerArcColor
                 it.strokeWidth = innerArcThickness
+                it.pathEffect = innerArcPathDashEffect
             }
         )
 

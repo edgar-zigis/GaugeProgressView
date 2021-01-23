@@ -3,6 +3,8 @@
     <declare-styleable name="GaugeProgressView">
         <attr name="gpv_outerArcThickness" format="dimension" />
         <attr name="gpv_innerArcThickness" format="dimension" />
+        <attr name="gpv_innerArcDashThickness" format="dimension" />
+        <attr name="gpv_innerArcDashDistance" format="dimension" />
         <attr name="gpv_offsetBetweenArcs" format="dimension" />
         <attr name="gpv_startAngle" format="float" />
         <attr name="gpv_progress" format="integer" />
