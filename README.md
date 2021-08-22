@@ -8,10 +8,10 @@ Unique progress view with rich customisation options! You can hide value if you 
 ### Gradle
 Make sure you have jitpack.io included in your gradle repositories.
 
-```
+```gradle
 maven { url "https://jitpack.io" }
 ```
-```
+```gradle
 implementation 'com.github.edgar-zigis:gaugeprogressview:1.1.0'
 ```
 ### Usage
