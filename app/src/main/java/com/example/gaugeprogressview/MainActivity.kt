@@ -3,8 +3,9 @@ package com.example.gaugeprogressview
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.gaugeprogressview.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -12,18 +13,21 @@ class MainActivity : AppCompatActivity() {
     private var handler = Handler(Looper.getMainLooper())
     private var runnable = object : Runnable {
         override fun run() {
-            if (progressView.progress < 100) {
-                progressView.setProgress(
-                    newProgress = progressView.progress + Random.nextInt(3, 20)
+            if (binding.progressView.progress < 100) {
+                binding.progressView.setProgress(
+                    newProgress = binding.progressView.progress + Random.nextInt(3, 20)
                 )
                 handler.postDelayed(this, 2000)
             }
         }
     }
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        setContentView(binding.root)
         handler.postDelayed(runnable, 0)
     }
 }
