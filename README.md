@@ -12,7 +12,7 @@ Make sure you have jitpack.io included in your gradle repositories.
 maven { url "https://jitpack.io" }
 ```
 ```gradle
-implementation 'com.github.edgar-zigis:gaugeprogressview:1.1.0'
+implementation 'com.github.edgar-zigis:gaugeprogressview:1.1.1'
 ```
 ### Usage
 ``` xml
