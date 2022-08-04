@@ -21,8 +21,6 @@ open class GaugeProgressView : View {
 
     var startAngle = -90f
 
-    var animated = true
-
     var outerArcThickness = dp(7.5f)
     var innerArcThickness = dp(10f)
     var offsetBetweenArcs = dp(15f)
@@ -272,7 +270,7 @@ open class GaugeProgressView : View {
 
     //  Public setters
 
-    fun setProgress(newProgress: Int) {
+    fun setProgress(newProgress: Int, animated: Boolean = true) {
         val targetProgress = max(0, min(newProgress, 100))
         var duration = (abs(progress - newProgress).toFloat() / 10) * 200
 
