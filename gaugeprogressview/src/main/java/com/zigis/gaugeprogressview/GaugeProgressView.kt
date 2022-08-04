@@ -272,10 +272,11 @@ open class GaugeProgressView : View {
 
     fun setProgress(newProgress: Int, animated: Boolean = true) {
         val targetProgress = max(0, min(newProgress, 100))
-        var duration = (abs(progress - newProgress).toFloat() / 10) * 200
 
-        if (!animated) {
-            duration = 0f
+        val duration = if (animated) {
+            (abs(progress - newProgress).toFloat() / 10) * 200
+        } else {
+            0f
         }
 
         value = targetProgress.toString()
