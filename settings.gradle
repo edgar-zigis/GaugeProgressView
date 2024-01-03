@@ -1,3 +1,3 @@
+rootProject.name = "GaugeProgressView"
 include ':gaugeprogressview'
 include ':app'
-rootProject.name = "GaugeProgressView"
