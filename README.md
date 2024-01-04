@@ -16,7 +16,7 @@ allprojects {
 }
 ```
 ```gradle
-implementation 'com.bio-matic:gaugeprogressview:1.1.2'
+implementation 'com.bio-matic:gaugeprogressview:1.2.1'
 ```
 ### Usage
 ``` xml
