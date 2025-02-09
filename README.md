@@ -1,7 +1,7 @@
 # GaugeProgressView [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.bio-matic/gaugeprogressview/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.bio-matic/gaugeprogressview)
 
 Unique progress view with rich customisation options! You can hide value if you want too.
-##### Minimum target SDK: 17. RTL SUPPORTED.
+##### Minimum target SDK: 21. RTL SUPPORTED.
 
 ![alt text](https://github.com/edgar-zigis/GaugeProgressView/blob/master/sample.gif?raw=true)
 
